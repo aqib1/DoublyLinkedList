@@ -30,6 +30,7 @@ class LinkedList<T> {
 	public T pop() {
 		Node<T> popNode = end;
 		end = end.previous;
+		end.next = null;
 		return popNode.value;
 	}
 
@@ -124,7 +125,7 @@ class LinkedList<T> {
 		li.push(3);
 		li.push(4);
 		li.push(5);
-		li.poll();
-		System.out.println(li);
+		li.pop();
+		System.out.println(li.fifoString());
 	}
 }
